@@ -4,6 +4,8 @@
 *.o
 *.a
 *.dll
+*.exp
+*.lib
 
 # Spells directory
 spells/
