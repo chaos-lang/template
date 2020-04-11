@@ -2,16 +2,23 @@
 
 Fork this repository to create Chaos C extensions.
 
-At bare minimum, your C extension should be able to build with these commands on the relative platforms:
+To develop a Chaos C extension, first you need to have `gcc` and Chaos headers.
+To have these requirements, run:
 
 ```
-make linux
-make macos
-make windows
+git clone https://github.com/chaos-lang/chaos.git
+cd chaos/
+make requirements-dev
 ```
 
-Your package name have to match with dynamic library name, for `template` it must be `template(.so|.dylib|.dll)`
-and the `name` field in `occultist.json`.
+At bare minimum, your C extension should be able to build with:
+
+```
+make
+```
+
+Your package name have to match with dynamic library name, e.g. if the library name is `template`
+then it must be `template(.so|.dylib|.dll)` and the `name` field in `occultist.json` have to be `template` too.
 
 This template provides the necessary `make` commands, an example C code and everything required to
 being compiled by `occultist` with proper file extensions on the target platform.
