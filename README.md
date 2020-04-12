@@ -1,20 +1,24 @@
-# Template for Chaos C extension developers
+# Template for Chaos C Extension Developers
 
 Fork this repository to create Chaos C extensions.
 
-To develop a Chaos C extension, first you need to have `gcc` and Chaos headers.
+To develop a Chaos C extension, first you need to have `gcc` or `clang` and Chaos headers.
 To have these requirements, run:
 
 ```
-git clone https://github.com/chaos-lang/chaos.git
-cd chaos/
-make requirements-dev
+make requirements
 ```
 
-At bare minimum, your C extension should be able to build with:
+At bare minimum, your C extension should be able to build using `gcc` with:
 
 ```
 make
+```
+
+and for `clang`:
+
+```
+make clang
 ```
 
 Your package name have to match with dynamic library name, e.g. if the library name is `template`
