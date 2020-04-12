@@ -9,7 +9,7 @@ IF [%1]==[clang] (
     IF not exist spells\template mkdir spells\template
     COPY template.dll spells\template
 
-    chaos test.kaos
+    CALL test.bat
     IF errorlevel 1 (
         EXIT /B 1
     )

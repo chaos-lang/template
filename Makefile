@@ -25,13 +25,15 @@ build-linux:
 build-macos:
 	${CHAOS_COMPILER} -shared -fPIC -undefined dynamic_lookup template.c -o template.dylib
 
-test:
+spell:
 	mkdir -p spells/template
 	export GLOBIGNORE='*.c'
 	cp template.* spells/template/
-	chaos test.kaos
+
+test: spell
+	./test.sh
 
 requirements:
-	git clone https://github.com/chaos-lang/chaos.git .chaos/
-	cd .chaos/
-	sudo make requirements-dev
+	git clone https://github.com/chaos-lang/chaos.git .chaos/ && \
+	cd .chaos/ && \
+	make requirements-dev
