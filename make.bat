@@ -21,6 +21,7 @@ IF [%1]==[clang] (
     IF errorlevel 1 (
         EXIT /B 1
     )
+    RMDIR .chaos\
     CD ..
     EXIT /B 0
 )
