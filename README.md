@@ -21,11 +21,13 @@ and for `clang`:
 make clang
 ```
 
-Your package name have to match with dynamic library name, e.g. if the library name is `template`
+Your package name have to match with dynamic library name, e.g. if the package name is `template`
 then it must be `template(.so|.dylib|.dll)` and the `name` field in `occultist.json` have to be `template` too.
 
 This template provides the necessary `make` commands, an example C code and everything required to
 being compiled by `occultist` with proper file extensions on the target platform.
+
+This repository also provies the example GitHub workflows to automate the testing and memory leak checks for your extension.
 
 ## Useful Links
 
