@@ -4,6 +4,8 @@ SHELL=/bin/bash
 
 UNAME_S := $(shell uname -s)
 
+export SPELL_NAME=template
+
 default:
 	export CHAOS_COMPILER=gcc
 	${MAKE} build
@@ -20,15 +22,15 @@ else
 endif
 
 build-linux:
-	${CHAOS_COMPILER} -shared -fPIC template.c -o template.so
+	${CHAOS_COMPILER} -shared -fPIC ${SPELL_NAME}.c -o ${SPELL_NAME}.so
 
 build-macos:
-	${CHAOS_COMPILER} -shared -fPIC -undefined dynamic_lookup template.c -o template.dylib
+	${CHAOS_COMPILER} -shared -fPIC -undefined dynamic_lookup ${SPELL_NAME}.c -o ${SPELL_NAME}.dylib
 
 spell:
-	mkdir -p spells/template
+	mkdir -p spells/${SPELL_NAME}
 	export GLOBIGNORE='*.c'
-	cp template.* spells/template/
+	cp ${SPELL_NAME}.* spells/${SPELL_NAME}/
 
 test: spell
 	./test.sh
@@ -39,5 +41,6 @@ memcheck: spell
 requirements:
 	git clone https://github.com/chaos-lang/chaos.git .chaos/ && \
 	cd .chaos/ && \
+	make requirements && \
 	make requirements-dev && \
 	rm -rf .chaos/
