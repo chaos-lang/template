@@ -78,6 +78,7 @@ jobs:
     - name: Run the tests (gcc)
       run: |
         make test
+        make test-compiler
 
     - name: Build (clang)
       run: |
@@ -87,6 +88,7 @@ jobs:
     - name: Run the tests (clang)
       run: |
         make test
+        make test-compiler
 
   macos:
     name: macos
@@ -110,6 +112,7 @@ jobs:
     - name: Run the tests (gcc)
       run: |
         make test
+        make test-compiler
 
     - name: Build (clang)
       run: |
@@ -121,6 +124,7 @@ jobs:
     - name: Run the tests (clang)
       run: |
         make test
+        make test-compiler
 
   windows:
     name: windows
@@ -144,6 +148,7 @@ jobs:
       shell: cmd
       run: |
         call make.bat test
+        call make.bat test-compiler
 
     - name: Build (clang)
       shell: cmd
@@ -157,3 +162,4 @@ jobs:
       run: |
         call RefreshEnv.cmd
         call make.bat test
+        call make.bat test-compiler
