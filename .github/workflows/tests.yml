@@ -99,12 +99,12 @@ jobs:
       run: |
         mv /usr/local/bin/gcc-8 /usr/local/bin/gcc
         make requirements
-        brew install gnu-sed
 
     - name: Build (gcc)
       run: |
         source ~/.bash_profile
         cd .chaos/ && make && make install && cd ..
+        source ~/.bash_profile
         make
 
     - name: Run the tests (gcc)
@@ -115,6 +115,7 @@ jobs:
       run: |
         source ~/.bash_profile
         cd .chaos/ && make clang && make install && cd ..
+        source ~/.bash_profile
         make clang
 
     - name: Run the tests (clang)

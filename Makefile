@@ -42,5 +42,4 @@ requirements:
 	git clone https://github.com/chaos-lang/chaos.git .chaos/ && \
 	cd .chaos/ && \
 	make requirements && \
-	make requirements-dev && \
 	rm -rf .chaos/
