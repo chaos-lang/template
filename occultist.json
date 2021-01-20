@@ -1,10 +1,10 @@
 {
     "name": "template",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Template for Chaos C extension developers.",
     "tags": ["official", "template"],
     "type": "extension",
-    "license": "MIT",
+    "license": "LGPL-3.0",
     "authors": [
         {
             "name": "M. Mert Yildiran",
